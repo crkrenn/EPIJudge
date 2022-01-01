@@ -11,12 +11,57 @@ WHITE, BLACK = range(2)
 
 Coordinate = collections.namedtuple('Coordinate', ('x', 'y'))
 
+# 12:00 - 12:20
+
+from collections import defaultdict
+from collections import deque
+import copy
 
 def search_maze(maze: List[List[int]], s: Coordinate,
                 e: Coordinate) -> List[Coordinate]:
     # TODO - you fill in here.
-    return []
-
+    # build graph
+    graph = defaultdict(list)
+    jmax = len(maze) - 1
+    imax = len(maze[0]) - 1
+    for j in range(len(maze)):
+        for i in range(len(maze[0])):
+            if maze[j][i] == WHITE:
+                point = Coordinate(j, i)
+                i2, j2 = i-1, j
+                if i2 >= 0 and maze[j2][i2] == WHITE:
+                    point2 = Coordinate(j2, i2)
+                    graph[point].append(point2)
+                i2, j2 = i+1, j
+                if i2 <= imax and maze[j2][i2] == WHITE:
+                    point2 = Coordinate(j2, i2)
+                    graph[point].append(point2)
+                i2, j2 = i, j - 1
+                if j2 >= 0 and maze[j2][i2] == WHITE:
+                    point2 = Coordinate(j2, i2)
+                    graph[point].append(point2)
+                i2, j2 = i, j + 1
+                if j2 <= jmax and maze[j2][i2] == WHITE:
+                    point2 = Coordinate(j2, i2)
+                    graph[point].append(point2)
+    visited = set()
+    queue = deque([[s]])
+    solution = []
+    while not solution and queue:
+        path = queue.popleft()
+        node = path[-1]
+        visited.add(node)
+        for neighbor in graph[node]:
+            if not neighbor in visited:
+                if neighbor == e:
+                    solution = path
+                    solution.append(neighbor)
+                    break
+                else:
+                    new_path = path.copy()
+                    new_path.append(neighbor)
+                    queue.append(new_path)
+    return solution
 
 def path_element_is_feasible(maze, prev, cur):
     if not ((0 <= cur.x < len(maze)) and
