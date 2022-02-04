@@ -1,8 +1,16 @@
 from test_framework import generic_test
 
+# 9:16 - 9:18
 
 def is_palindromic(s: str) -> bool:
     # TODO - you fill in here.
+    i = 0
+    j = len(s) - 1
+    while j > i:
+        if s[i] != s[j]:
+            return False
+        i += 1
+        j -= 1
     return True
 
 

@@ -8,50 +8,32 @@ from test_framework.test_utils import enable_executor_hook
 RED, WHITE, BLUE = range(3)
 
 
-def dutch_flag_partition(pivot_index: int, A: List[int]) -> None:
-    # count_0 = A.count(0)
-    # count_1 = A.count(1)
-    # count_2 = A.count(2)
-    # for i in range(len(A)):
-    #     if i < count_0:
-    #         A[i] = 0
-    #     elif i < count_0 + count_1:
-    #         A[i] = 1
-    #     else:
-    #         A[i] = 2
-    
+# [2, 2, 2, 2]; p = 2; pass (all eq)
+# [1, 2, 2, 2]; p = 1; pass (all gt)
+# [2, 2, 1, 2]; p = 2; pass (all gt)
+# [2, 1, 1, 1]; p = 1; 
 
-    # TODO - you fill in here.
-    print()
-    print("in", A)
-    lt_right_index = 0
-    eq_right_index = 0
-    i = 0
+def dutch_flag_partition(pivot_index: int, A: List[int]) -> None:
+    lt_idx = 0
+    eq_idx = 1
+    gt_idx = 1
+    idx = 1
     pivot = A[pivot_index]
-    while i < len(A):
-        a = A[i]
-        if a > pivot:
-            i = i + 1
-        elif lt_right_index == eq_right_index:
-            if a < pivot:
-                A[lt_right_index], A[i] = A[i], A[lt_right_index]
-                lt_right_index = lt_right_index + 1
-                eq_right_index = eq_right_index + 1
-            if a == pivot:
-                A[eq_right_index], A[i] = A[i], A[eq_right_index]
-                eq_index = eq_right_index + 1
-            i = i + 1
+    A[0], A[pivot_index] = A[pivot_index], A[0]
+    while idx < len(A):
+        if A[idx] > pivot:
+            gt_idx += 1
+        elif A[idx] == pivot:
+            A[idx], A[eq_idx] = A[eq_idx], A[idx]
+            eq_idx += 1
+            gt_idx += 1
         else:
-            if a < pivot:
-                A[eq_index], A[i] = A[i], A[eq_index]
-                A[lt_right_index], A[eq_index] = A[eq_index], A[lt_right_index]
-                lt_right_index = lt_right_index + 1
-                eq_right_index = eq_right_index + 1
-            if a == pivot:
-                A[eq_right_index], A[i] = A[i], A[eq_right_index]
-                eq_right_index = eq_right_index + 1
-            i = i + 1
-    print("out:", A)
+            A[idx], A[eq_idx] = A[eq_idx], A[idx]
+            A[lt_idx], A[eq_idx] = A[eq_idx], A[lt_idx]
+            lt_idx += 1
+            eq_idx += 1
+            gt_idx += 1
+        idx += 1
     return
 
 

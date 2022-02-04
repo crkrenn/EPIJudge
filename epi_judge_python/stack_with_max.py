@@ -1,23 +1,58 @@
 from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 
+from icecream import ic
+ic.configureOutput(includeContext=True)
+
+def ic(*argv):
+    return None
+
+def global_max(*argv):
+    return max(*argv)
 
 class Stack:
+    def __init__(self) -> None:
+        self.stack = []
+        self.max_list = []
+        ic(self.stack, self.max_list)
+        return None
+
     def empty(self) -> bool:
-        # TODO - you fill in here.
-        return True
+        ic(self.stack, self.max_list)
+        return len(self.stack) == 0
 
     def max(self) -> int:
-        # TODO - you fill in here.
-        return 0
+        ic(self.stack, self.max_list)
+        return self.max_list[-1]
 
     def pop(self) -> int:
-        # TODO - you fill in here.
-        return 0
+        self.max_list.pop()
+        result = self.stack.pop()
+        ic(self.stack, self.max_list)
+        return result
 
     def push(self, x: int) -> None:
-        # TODO - you fill in here.
-        return
+        if self.empty():
+            new_max = x 
+        else:
+            new_max = global_max(x, self.max_list[-1])
+        self.stack.append(x)
+        self.max_list.append(new_max)
+        ic(self.stack, self.max_list)
+        return None
+
+s = Stack()
+ic(s.push(-784))
+ic(s.pop())
+ic(s.push(452))
+ic(s.max())
+ic(s.pop())
+ic(s.push(761))
+ic(s.push(402))
+ic(s.max())
+ic(s.pop())
+ic(s.max())
+ic(s.pop())
 
 
 def stack_tester(ops):

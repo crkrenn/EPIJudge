@@ -122,7 +122,7 @@ problem_mapping = {
                 "total": 19952
             },
             "Python: reverse_digits.py": {
-                "passed": 0,
+                "passed": 19952,
                 "total": 19952
             }
         },
@@ -208,7 +208,7 @@ problem_mapping = {
                 "total": 505
             },
             "Python: int_as_array_increment.py": {
-                "passed": 0,
+                "passed": 505,
                 "total": 505
             }
         },
@@ -418,7 +418,7 @@ problem_mapping = {
                 "total": 745
             },
             "Python: is_valid_sudoku.py": {
-                "passed": 0,
+                "passed": 745,
                 "total": 745
             }
         },
@@ -476,7 +476,7 @@ problem_mapping = {
                 "total": 10000
             },
             "Python: is_string_palindromic.py": {
-                "passed": 0,
+                "passed": 10000,
                 "total": 10000
             }
         },
@@ -490,7 +490,7 @@ problem_mapping = {
                 "total": 15002
             },
             "Python: string_integer_interconversion.py": {
-                "passed": 0,
+                "passed": 15002,
                 "total": 15002
             }
         },
@@ -698,7 +698,7 @@ problem_mapping = {
                 "total": 501
             },
             "Python: sorted_lists_merge.py": {
-                "passed": 0,
+                "passed": 501,
                 "total": 501
             }
         },
@@ -754,7 +754,7 @@ problem_mapping = {
                 "total": 120
             },
             "Python: do_lists_overlap.py": {
-                "passed": 0,
+                "passed": 3,
                 "total": 120
             }
         },
@@ -782,7 +782,7 @@ problem_mapping = {
                 "total": 306
             },
             "Python: delete_kth_last_from_list.py": {
-                "passed": 0,
+                "passed": 306,
                 "total": 306
             }
         },
@@ -882,7 +882,7 @@ problem_mapping = {
                 "total": 101
             },
             "Python: stack_with_max.py": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             }
         },
@@ -896,7 +896,7 @@ problem_mapping = {
                 "total": 108
             },
             "Python: evaluate_rpn.py": {
-                "passed": 0,
+                "passed": 108,
                 "total": 108
             }
         },
@@ -1010,7 +1010,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Python: is_tree_balanced.py": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             }
         },
@@ -1024,7 +1024,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Python: is_tree_symmetric.py": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             }
         },
@@ -1150,7 +1150,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Python: tree_from_preorder_inorder.py": {
-                "passed": 0,
+                "passed": 2,
                 "total": 3852
             }
         },
@@ -1222,7 +1222,7 @@ problem_mapping = {
                 "total": 152
             },
             "Python: sorted_arrays_merge.py": {
-                "passed": 0,
+                "passed": 152,
                 "total": 152
             }
         },
@@ -1308,7 +1308,7 @@ problem_mapping = {
                 "total": 314
             },
             "Python: search_first_key.py": {
-                "passed": 0,
+                "passed": 314,
                 "total": 314
             }
         },
@@ -1478,7 +1478,7 @@ problem_mapping = {
                 "total": 212
             },
             "Python: is_anonymous_letter_constructible.py": {
-                "passed": 0,
+                "passed": 212,
                 "total": 212
             }
         },
@@ -1620,7 +1620,7 @@ problem_mapping = {
                 "total": 202
             },
             "Python: intersect_sorted_arrays.py": {
-                "passed": 0,
+                "passed": 202,
                 "total": 202
             }
         },
@@ -1804,7 +1804,7 @@ problem_mapping = {
                 "total": 3139
             },
             "Python: is_tree_a_bst.py": {
-                "passed": 0,
+                "passed": 3139,
                 "total": 3139
             }
         },
@@ -1974,7 +1974,7 @@ problem_mapping = {
                 "total": 10
             },
             "Python: hanoi.py": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             }
         },
